@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glam — Sistema de Gestão para Salão de Beleza</title>
+  <meta name="description" content="Da agenda online aos pagamentos automatizados: o sistema completo para salões, barbearias, clínicas de estética e studios crescerem sem complicação." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <div class="logo-icon">✦</div>
+        <span>Glam</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#solucoes">Soluções</a></li>
+        <li><a href="#negocios">Negócios</a></li>
+        <li><a href="#recursos">Recursos</a></li>
+        <li><a href="#planos">Planos</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="#" class="btn-ghost">Entrar</a>
+        <a href="#demo" class="btn-primary">Teste Grátis</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero-bg">
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+      <div class="hero-orb hero-orb-3"></div>
+      <div class="grid-overlay"></div>
+    </div>
+    <div class="hero-container">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Mais de 40.000 negócios transformados
+      </div>
+      <h1 class="hero-title">
+        Gerencie seu<br/>
+        <span class="gradient-text">salão de beleza</span><br/>
+        sem estresse
+      </h1>
+      <p class="hero-subtitle">
+        Da agenda online a soluções em pagamentos de profissionais, do clube de assinaturas às rotinas de mensagens via WhatsApp — tudo para você inovar na gestão em um só lugar.
+      </p>
+      <div class="hero-ctas">
+        <a href="#demo" class="btn-hero-primary" id="demo">
+          <span>Testar Grátis por 14 dias</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M8 3l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#solucoes" class="btn-hero-secondary">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" stroke="currentColor" stroke-width="1.5"/><path d="M7 6l4 3-4 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Ver como funciona
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num">40k<span class="stat-plus">+</span></span>
+          <span class="stat-label">Negócios ativos</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num">98<span class="stat-pct">%</span></span>
+          <span class="stat-label">Satisfação</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num">14<span class="stat-days">d</span></span>
+          <span class="stat-label">Teste grátis</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="ui-mockup">
+        <div class="mockup-header">
+          <div class="mockup-dot red"></div>
+          <div class="mockup-dot yellow"></div>
+          <div class="mockup-dot green"></div>
+          <span class="mockup-title">Agenda — Hoje</span>
+        </div>
+        <div class="mockup-body">
+          <div class="appt-card appt-1">
+            <div class="appt-time">09:00</div>
+            <div class="appt-info">
+              <strong>Ana Costa</strong>
+              <span>Coloração + Hidratação</span>
+            </div>
+            <div class="appt-status confirmed">✓</div>
+          </div>
+          <div class="appt-card appt-2">
+            <div class="appt-time">10:30</div>
+            <div class="appt-info">
+              <strong>Maria Silva</strong>
+              <span>Corte + Escova</span>
+            </div>
+            <div class="appt-status pending">•</div>
+          </div>
+          <div class="appt-card appt-3">
+            <div class="appt-time">13:00</div>
+            <div class="appt-info">
+              <strong>Juliana Freitas</strong>
+              <span>Manicure + Pedicure</span>
+            </div>
+            <div class="appt-status confirmed">✓</div>
+          </div>
+          <div class="mockup-profit">
+            <span class="profit-label">Faturamento hoje</span>
+            <span class="profit-value">R$ 1.240,00</span>
+          </div>
+        </div>
+      </div>
+      <div class="floating-card card-notification">
+        <div class="notif-icon">💬</div>
+        <div class="notif-text">
+          <strong>WhatsApp enviado!</strong>
+          <span>Confirmação para Ana Costa</span>
+        </div>
+      </div>
+      <div class="floating-card card-rating">
+        <div class="rating-stars">⭐⭐⭐⭐⭐</div>
+        <span>Nova avaliação — 5 estrelas</span>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>Role para baixo</span>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <section class="trust-bar">
+    <div class="trust-container">
+      <div class="trust-item">
+        <div class="trust-icon">📅</div>
+        <span>Agenda Online</span>
+      </div>
+      <div class="trust-divider">—</div>
+      <div class="trust-item">
+        <div class="trust-icon">💳</div>
+        <span>Pagamentos Integrados</span>
+      </div>
+      <div class="trust-divider">—</div>
+      <div class="trust-item">
+        <div class="trust-icon">💬</div>
+        <span>WhatsApp Automático</span>
+      </div>
+      <div class="trust-divider">—</div>
+      <div class="trust-item">
+        <div class="trust-icon">🌐</div>
+        <span>Seu Site Próprio</span>
+      </div>
+      <div class="trust-divider">—</div>
+      <div class="trust-item">
+        <div class="trust-icon">📊</div>
+        <span>130+ Relatórios</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES TABS -->
+  <section class="features-section" id="solucoes">
+    <div class="section-container">
+      <div class="section-header">
+        <div class="section-badge">Soluções Completas</div>
+        <h2 class="section-title">Tudo que o seu negócio precisa,<br/><span class="gradient-text">em um só lugar</span></h2>
+        <p class="section-subtitle">Ferramentas poderosas projetadas para impulsionar seu crescimento e simplificar sua gestão diária.</p>
+      </div>
+
+      <div class="features-tabs">
+        <div class="tab-nav" id="tabNav">
+          <button class="tab-btn active" data-tab="agenda">📅 Agenda</button>
+          <button class="tab-btn" data-tab="site">🌐 Seu Site</button>
+          <button class="tab-btn" data-tab="financeiro">💰 Financeiro</button>
+          <button class="tab-btn" data-tab="pagamentos">💳 Pagamentos</button>
+          <button class="tab-btn" data-tab="whatsapp">💬 WhatsApp</button>
+          <button class="tab-btn" data-tab="assinaturas">🔄 Assinaturas</button>
+          <button class="tab-btn" data-tab="fidelidade">⭐ Fidelidade</button>
+          <button class="tab-btn" data-tab="estoque">📦 Estoque</button>
+        </div>
+
+        <div class="tab-content-wrapper">
+          <!-- AGENDA -->
+          <div class="tab-panel active" data-panel="agenda">
+            <div class="panel-content">
+              <div class="panel-text">
+                <div class="panel-icon-large">📅</div>
+                <h3>Agenda Online Inteligente</h3>
+                <p class="panel-desc">Dê adeus às agendas de papel. Seu negócio funciona 24h com agendamento online automatizado.</p>
+                <ul class="feature-list">
+                  <li><span class="feat-check">✓</span> Seus clientes fazem agendamentos pelo celular</li>
+                  <li><span class="feat-check">✓</span> Controle individual de cada profissional</li>
+                  <li><span class="feat-check">✓</span> Notificações automáticas de confirmação</li>
+                  <li><span class="feat-check">✓</span> Integração com Instagram, Facebook e Google</li>
+                  <li><span class="feat-check">✓</span> Fila de espera ou hora marcada — você escolhe</li>
+                  <li><span class="feat-check">✓</span> Acesso no computador, celular ou tablet</li>
+                </ul>
+                <a href="#demo" class="btn-panel">Testar agenda grátis →</a>
+              </div>
+              <div class="panel-visual">
+                <div class="calendar-mockup">
+                  <div class="cal-header">
+                    <span class="cal-month">Março 2026</span>
+                    <div class="cal-nav">
+                      <button>‹</button>
+                      <button>›</button>
+                    </div>
+                  </div>
+                  <div class="cal-days-header">
+                    <span>Dom</span><span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span>
+                  </div>
+                  <div class="cal-grid">
+                    <span class="prev-month">23</span><span class="prev-month">24</span><span class="prev-month">25</span><span class="prev-month">26</span><span class="prev-month">27</span><span class="prev-month">28</span><span>1</span>
+                    <span>2</span><span class="has-appt">3</span><span>4</span><span class="has-appt">5</span><span>6</span><span class="has-appt">7</span><span>8</span>
+                    <span class="has-appt">9</span><span>10</span><span class="has-appt">11</span><span>12</span><span class="has-appt">13</span><span class="has-appt">14</span><span>15</span>
+                    <span>16</span><span class="today has-appt">17</span><span class="has-appt">18</span><span>19</span><span class="has-appt">20</span><span>21</span><span class="has-appt">22</span>
+                    <span class="has-appt">23</span><span>24</span><span class="has-appt">25</span><span class="has-appt">26</span><span>27</span><span class="has-appt">28</span><span>29</span>
+                  </div>
+                  <div class="cal-appts">
+                    <div class="cal-appt-item">
+                      <span class="cal-time">09:00</span><span class="cal-name">Ana Costa — Coloração</span>
+                    </div>
+                    <div class="cal-appt-item">
+                      <span class="cal-time">11:00</span><span class="cal-name">Bruna Lima — Corte</span>
+                    </div>
+                    <div class="cal-appt-item">
+                      <span class="cal-time">14:30</span><span class="cal-name">Carla Rocha — Escova</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SITE -->
+          <div class="tab-panel" data-panel="site">
+            <div class="panel-content">
+              <div class="panel-text">
+                <div class="panel-icon-large">🌐</div>
+                <h3>Seu Site Profissional</h3>
+                <p class="panel-desc">Divulgue seu negócio e consiga mais agendamentos através do seu próprio site integrado.</p>
+                <ul class="feature-list">
+                  <li><span class="feat-check">✓</span> Agendamento direto pelo Instagram e Facebook</li>
+                  <li><span class="feat-check">✓</span> Aparece nas buscas do Google</li>
+                  <li><span class="feat-check">✓</span> Vitrine online com serviços e produtos</li>
+                  <li><span class="feat-check">✓</span> Google Reserve integrado</li>
+                  <li><span class="feat-check">✓</span> Conectado ao sistema de gestão</li>
+                  <li><span class="feat-check">✓</span> Integração via API se já tiver site</li>
+                </ul>
+                <a href="#demo" class="btn-panel">Criar meu site grátis →</a>
+              </div>
+              <div class="panel-visual">
+                <div class="site-mockup">
+                  <div class="site-browser-bar">
+                    <div class="browser-dots">
+                      <div class="b-dot red"></div>
+                      <div class="b-dot yellow"></div>
+                      <div class="b-dot green"></div>
+                    </div>
+                    <div class="browser-url">glamstudio.glam.app</div>
+                  </div>
+                  <div class="site-preview">
+                    <div class="site-hero-mock">
+                      <div class="site-logo-mock">✦ Glam Studio</div>
+                      <div class="site-tagline-mock">Agende seu horário</div>
+                      <div class="site-btn-mock">AGENDAR AGORA</div>
+                    </div>
+                    <div class="site-services-mock">
+                      <div class="service-mock-item">Corte</div>
+                      <div class="service-mock-item">Coloração</div>
+                      <div class="service-mock-item">Escova</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FINANCEIRO -->
+          <div class="tab-panel" data-panel="financeiro">
+            <div class="panel-content">
+              <div class="panel-text">
+                <div class="panel-icon-large">💰</div>
+                <h3>Controle Financeiro Total</h3>
+                <p class="panel-desc">Organize suas finanças para ter maior controle e lucrar muito mais com relatórios automáticos.</p>
+                <ul class="feature-list">
+                  <li><span class="feat-check">✓</span> Gerencie entradas, saídas e caixa</li>
+                  <li><span class="feat-check">✓</span> Integração com maquininha Belezinha da Stone</li>
+                  <li><span class="feat-check">✓</span> Receba por link de pagamento</li>
+                  <li><span class="feat-check">✓</span> Split automático de comissões</li>
+                  <li><span class="feat-check">✓</span> Pix integrado para pagamento de profissionais</li>
+                  <li><span class="feat-check">✓</span> Mais de 130 relatórios consolidados</li>
+                </ul>
+                <a href="#demo" class="btn-panel">Controlar minhas finanças →</a>
+              </div>
+              <div class="panel-visual">
+                <div class="finance-mockup">
+                  <div class="finance-header">
+                    <span>Resumo Financeiro</span>
+                    <span class="finance-month">Março 2026</span>
+                  </div>
+                  <div class="finance-total">
+                    <span class="finance-label">Faturamento Total</span>
+                    <span class="finance-value">R$ 18.340,00</span>
+                    <span class="finance-change positive">▲ +23% vs. mês anterior</span>
+                  </div>
+                  <div class="finance-bars">
+                    <div class="fbar-item">
+                      <span class="fbar-label">Serviços</span>
+                      <div class="fbar-track"><div class="fbar-fill" style="width:80%"></div></div>
+                      <span class="fbar-val">R$ 14.672</span>
+                    </div>
+                    <div class="fbar-item">
+                      <span class="fbar-label">Produtos</span>
+                      <div class="fbar-track"><div class="fbar-fill" style="width:45%"></div></div>
+                      <span class="fbar-val">R$ 2.960</span>
+                    </div>
+                    <div class="fbar-item">
+                      <span class="fbar-label">Assinatura</span>
+                      <div class="fbar-track"><div class="fbar-fill" style="width:25%"></div></div>
+                      <span class="fbar-val">R$ 708</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PAGAMENTOS -->
+          <div class="tab-panel" data-panel="pagamentos">
+            <div class="panel-content">
+              <div class="panel-text">
+                <div class="panel-icon-large">💳</div>
+                <h3>Pagamento de Profissionais</h3>
+                <p class="panel-desc">Automatize o cálculo e pagamento de comissões. Seus profissionais acompanham tudo pelo app.</p>
+                <ul class="feature-list">
+                  <li><span class="feat-check">✓</span> Cálculo automático de comissões</li>
+                  <li><span class="feat-check">✓</span> Split na maquininha Belezinha</li>
+                  <li><span class="feat-check">✓</span> Conta digital PJ integrada Stone</li>
+                  <li><span class="feat-check">✓</span> App exclusivo para profissionais</li>
+                  <li><span class="feat-check">✓</span> Transparência total com cada profissional</li>
+                </ul>
+                <a href="#demo" class="btn-panel">Simplificar pagamentos →</a>
+              </div>
+              <div class="panel-visual">
+                <div class="payment-mockup">
+                  <div class="pay-header">Comissões do Mês</div>
+                  <div class="pay-list">
+                    <div class="pay-item">
+                      <div class="pay-avatar">AC</div>
+                      <div class="pay-info">
+                        <strong>Amanda Carvalho</strong>
+                        <span>32 atendimentos</span>
+                      </div>
+                      <div class="pay-amount">R$ 2.140</div>
+                    </div>
+                    <div class="pay-item">
+                      <div class="pay-avatar">RS</div>
+                      <div class="pay-info">
+                        <strong>Rafael Sousa</strong>
+                        <span>28 atendimentos</span>
+                      </div>
+                      <div class="pay-amount">R$ 1.820</div>
+                    </div>
+                    <div class="pay-item">
+                      <div class="pay-avatar">BL</div>
+                      <div class="pay-info">
+                        <strong>Bianca Lima</strong>
+                        <span>41 atendimentos</span>
+                      </div>
+                      <div class="pay-amount">R$ 2.460</div>
+                    </div>
+                  </div>
+                  <div class="pay-btn-mock">Pagar Todos via Pix ›</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- WHATSAPP -->
+          <div class="tab-panel" data-panel="whatsapp">
+            <div class="panel-content">
+              <div class="panel-text">
+                <div class="panel-icon-large">💬</div>
+                <h3>Rotinas via WhatsApp</h3>
+                <p class="panel-desc">Evite cancelamentos e mantenha um ótimo relacionamento com seus clientes automaticamente.</p>
+                <ul class="feature-list">
+                  <li><span class="feat-check">✓</span> Lembretes automáticos de agendamento</li>
+                  <li><span class="feat-check">✓</span> Pesquisas de satisfação automáticas</li>
+                  <li><span class="feat-check">✓</span> Confirmação de presença por link</li>
+                  <li><span class="feat-check">✓</span> Redução drástica de cancelamentos</li>
+                  <li><span class="feat-check">✓</span> Integração oficial Meta/WhatsApp</li>
+                </ul>
+                <a href="#demo" class="btn-panel">Automatizar comunicação →</a>
+              </div>
+              <div class="panel-visual">
+                <div class="whatsapp-mockup">
+                  <div class="wa-header">
+                    <div class="wa-avatar">G</div>
+                    <div class="wa-info">
+                      <strong>Glam Studio 💆</strong>
+                      <span>online</span>
+                    </div>
+                  </div>
+                  <div class="wa-messages">
+                    <div class="wa-msg sent">
+                      Olá Ana! 💜 Lembramos que seu horário é amanhã às 14h no Glam Studio. Confirme sua presença:
+                    </div>
+                    <div class="wa-link">👉 Confirmar presença</div>
+                    <div class="wa-msg received">Confirmado! Estarei lá ✨</div>
+                    <div class="wa-msg sent">
+                      Perfeito! Te esperamos 😊 Até amanhã!
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ASSINATURAS -->
+          <div class="tab-panel" data-panel="assinaturas">
+            <div class="panel-content">
+              <div class="panel-text">
+                <div class="panel-icon-large">🔄</div>
+                <h3>Clube de Assinaturas</h3>
+                <p class="panel-desc">Fidelize seus clientes e garanta uma receita mensal recorrente com planos personalizados.</p>
+                <ul class="feature-list">
+                  <li><span class="feat-check">✓</span> Pacotes com serviços recorrentes</li>
+                  <li><span class="feat-check">✓</span> Automatize cobranças e acompanhamento</li>
+                  <li><span class="feat-check">✓</span> Link de pagamento pagar.me integrado</li>
+                  <li><span class="feat-check">✓</span> Controle total sem complicação</li>
+                  <li><span class="feat-check">✓</span> Benefícios que incentivam recorrência</li>
+                </ul>
+                <a href="#demo" class="btn-panel">Criar meu clube →</a>
+              </div>
+              <div class="panel-visual">
+                <div class="subscription-mockup">
+                  <div class="sub-title">Seus Planos</div>
+                  <div class="sub-plans">
+                    <div class="sub-plan basic">
+                      <div class="sub-plan-name">Básico</div>
+                      <div class="sub-plan-price">R$ 149<span>/mês</span></div>
+                      <div class="sub-includes">2 cortes + 1 escova</div>
+                      <div class="sub-members">38 assinantes</div>
+                    </div>
+                    <div class="sub-plan premium active-plan">
+                      <div class="sub-badge-pop">Popular</div>
+                      <div class="sub-plan-name">Premium ✦</div>
+                      <div class="sub-plan-price">R$ 289<span>/mês</span></div>
+                      <div class="sub-includes">4 cortes + coloração + hidra</div>
+                      <div class="sub-members">71 assinantes</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FIDELIDADE -->
+          <div class="tab-panel" data-panel="fidelidade">
+            <div class="panel-content">
+              <div class="panel-text">
+                <div class="panel-icon-large">⭐</div>
+                <h3>Programa de Fidelidade</h3>
+                <p class="panel-desc">Atraia, retenha e surpreenda seus clientes com recompensas exclusivas por cada serviço.</p>
+                <ul class="feature-list">
+                  <li><span class="feat-check">✓</span> Pontos por cada visita ou serviço</li>
+                  <li><span class="feat-check">✓</span> Experiência personalizada por cliente</li>
+                  <li><span class="feat-check">✓</span> Histórico completo de atendimentos</li>
+                  <li><span class="feat-check">✓</span> Engajamento monitorado pelo sistema</li>
+                  <li><span class="feat-check">✓</span> Aumento comprovado de retenção</li>
+                </ul>
+                <a href="#demo" class="btn-panel">Criar programa de fidelidade →</a>
+              </div>
+              <div class="panel-visual">
+                <div class="loyalty-mockup">
+                  <div class="loyalty-client">
+                    <div class="loyalty-avatar">M</div>
+                    <div class="loyalty-info">
+                      <strong>Maria Silva</strong>
+                      <span>Cliente VIP ✦</span>
+                    </div>
+                    <div class="loyalty-level">Nível 4</div>
+                  </div>
+                  <div class="loyalty-points">
+                    <span class="lp-label">Seus pontos</span>
+                    <span class="lp-value">1.840 pts</span>
+                  </div>
+                  <div class="loyalty-progress-wrap">
+                    <div class="loyalty-progress-bar">
+                      <div class="loyalty-progress-fill" style="width:73%"></div>
+                    </div>
+                    <div class="loyalty-next">160 pts para ganhar desconto de R$50</div>
+                  </div>
+                  <div class="loyalty-history">
+                    <div class="lh-item">+80 pts — Coloração</div>
+                    <div class="lh-item">+40 pts — Escova</div>
+                    <div class="lh-item">+60 pts — Hidratação</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ESTOQUE -->
+          <div class="tab-panel" data-panel="estoque">
+            <div class="panel-content">
+              <div class="panel-text">
+                <div class="panel-icon-large">📦</div>
+                <h3>Controle de Estoque</h3>
+                <p class="panel-desc">Evite a falta de produtos na hora do atendimento e mantenha seu estoque sempre em dia.</p>
+                <ul class="feature-list">
+                  <li><span class="feat-check">✓</span> Entrada e saída de produtos eficiente</li>
+                  <li><span class="feat-check">✓</span> Alertas automáticos de reposição</li>
+                  <li><span class="feat-check">✓</span> Relatórios detalhados de consumo</li>
+                  <li><span class="feat-check">✓</span> Integrado ao sistema de atendimento</li>
+                  <li><span class="feat-check">✓</span> Nunca fique sem produto no serviço</li>
+                </ul>
+                <a href="#demo" class="btn-panel">Controlar meu estoque →</a>
+              </div>
+              <div class="panel-visual">
+                <div class="stock-mockup">
+                  <div class="stock-header">Estoque de Produtos</div>
+                  <div class="stock-list">
+                    <div class="stock-item ok">
+                      <span class="stock-name">Tinta L'Oréal 7.0</span>
+                      <div class="stock-bar-wrap"><div class="stock-bar" style="width:70%"></div></div>
+                      <span class="stock-qty">14 un.</span>
+                    </div>
+                    <div class="stock-item warning">
+                      <span class="stock-name">Máscara Hidratante</span>
+                      <div class="stock-bar-wrap"><div class="stock-bar" style="width:20%"></div></div>
+                      <span class="stock-qty low">2 un.⚠</span>
+                    </div>
+                    <div class="stock-item ok">
+                      <span class="stock-name">Shampoo Profissional</span>
+                      <div class="stock-bar-wrap"><div class="stock-bar" style="width:55%"></div></div>
+                      <span class="stock-qty">8 un.</span>
+                    </div>
+                    <div class="stock-item critical">
+                      <span class="stock-name">Água Oxigenada 40v</span>
+                      <div class="stock-bar-wrap"><div class="stock-bar" style="width:8%"></div></div>
+                      <span class="stock-qty low">1 un.🔴</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOR WHOM / BUSINESS TYPES -->
+  <section class="business-section" id="negocios">
+    <div class="section-container">
+      <div class="section-header light">
+        <div class="section-badge dark">Para o seu negócio</div>
+        <h2 class="section-title light">Glam é para <span class="gradient-text">todos os tipos</span><br/>de negócios de beleza</h2>
+      </div>
+      <div class="business-grid">
+        <div class="business-card" data-type="salao">
+          <div class="biz-icon">💈</div>
+          <h3>Salão de Beleza</h3>
+          <p>Total controle dos agendamentos, gestão de profissionais e fidelização de clientes — independente do tamanho.</p>
+          <ul class="biz-features">
+            <li>Controle de agenda online</li>
+            <li>Cálculo e pagamento de comissões</li>
+            <li>Fluxo de caixa</li>
+          </ul>
+          <a href="#demo" class="btn-biz">Ver soluções →</a>
+        </div>
+        <div class="business-card" data-type="barbearia">
+          <div class="biz-icon">✂️</div>
+          <h3>Barbearia</h3>
+          <p>Libere tempo na sua rotina para vender mais com sistema completo, estoque e clube de assinaturas.</p>
+          <ul class="biz-features">
+            <li>Controle de agenda online</li>
+            <li>App para profissionais</li>
+            <li>Clube de Assinaturas</li>
+          </ul>
+          <a href="#demo" class="btn-biz">Ver soluções →</a>
+        </div>
+        <div class="business-card featured" data-type="clinica">
+          <div class="biz-badge-card">Mais solicitado</div>
+          <div class="biz-icon">✨</div>
+          <h3>Clínica de Estética</h3>
+          <p>Gerencie profissionais e atraia mais clientes com ferramentas de comunicação e marketing exclusivas.</p>
+          <ul class="biz-features">
+            <li>Gestão de pacotes</li>
+            <li>Fichas de Anamnese</li>
+            <li>Controle de estoque</li>
+          </ul>
+          <a href="#demo" class="btn-biz featured-btn">Ver soluções →</a>
+        </div>
+        <div class="business-card" data-type="studios">
+          <div class="biz-icon">💅</div>
+          <h3>Studios</h3>
+          <p>Para lash designers, nail designers, esmalterias, studios de tatuagem e muito mais.</p>
+          <ul class="biz-features">
+            <li>Captação de clientes</li>
+            <li>Cálculo de comissões</li>
+            <li>Split de pagamentos</li>
+          </ul>
+          <a href="#demo" class="btn-biz">Ver soluções →</a>
+        </div>
+        <div class="business-card" data-type="redes">
+          <div class="biz-icon">🏢</div>
+          <h3>Redes e Franquias</h3>
+          <p>Gestão centralizada de todas as unidades com mais de 130 tipos de relatórios consolidados.</p>
+          <ul class="biz-features">
+            <li>Gestão centralizada</li>
+            <li>Relatórios consolidados</li>
+            <li>Fidelização de clientes</li>
+          </ul>
+          <a href="#demo" class="btn-biz">Ver soluções →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTIONS PILLARS -->
+  <section class="pillars-section" id="recursos">
+    <div class="section-container">
+      <div class="section-header">
+        <div class="section-badge">Recursos Avançados</div>
+        <h2 class="section-title">Pilares do seu <span class="gradient-text">sucesso</span></h2>
+      </div>
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-icon">🎯</div>
+          <h3>O Essencial para o Sucesso</h3>
+          <p>As soluções que seu negócio de beleza precisa estão todas aqui. Digitalize, automatize e foque no que importa.</p>
+          <a href="#demo" class="pill-link">Saiba mais →</a>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon">💡</div>
+          <h3>Simplifique as Finanças</h3>
+          <p>Controle financeiro eficiente: registros automatizados, relatórios personalizados e máquina integrada.</p>
+          <a href="#demo" class="pill-link">Saiba mais →</a>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon">📡</div>
+          <h3>Comunicação sem Limites</h3>
+          <p>Conecte-se ao Google, Instagram e Facebook. Automatize mensagens e fidelize clientes de forma inteligente.</p>
+          <a href="#demo" class="pill-link">Saiba mais →</a>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon">🚀</div>
+          <h3>Expanda Sem Fronteiras</h3>
+          <p>Mais de 130 relatórios consolidados e gestão unificada de unidades para crescer sem barreiras.</p>
+          <a href="#demo" class="pill-link">Saiba mais →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section">
+    <div class="section-container">
+      <div class="section-header">
+        <div class="section-badge">Depoimentos</div>
+        <h2 class="section-title">O que nossos <span class="gradient-text">clientes dizem</span></h2>
+      </div>
+      <div class="testimonials-track" id="testimonialsTrack">
+        <div class="testimonial-card">
+          <div class="t-stars">⭐⭐⭐⭐⭐</div>
+          <p>"Desde que comecei a usar o Glam, meu salão cresceu 40% no faturamento. A agenda online mudou tudo — clientes agendando sozinhos enquanto eu durmo!"</p>
+          <div class="t-author">
+            <div class="t-avatar">P</div>
+            <div class="t-info">
+              <strong>Patrícia Almeida</strong>
+              <span>Salão Bella Arte — SP</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="t-stars">⭐⭐⭐⭐⭐</div>
+          <p>"O WhatsApp automático reduziu meus cancelamentos em 70%. É incrível como um simples lembrete pode fazer tanta diferença na receita mensal."</p>
+          <div class="t-author">
+            <div class="t-avatar">R</div>
+            <div class="t-info">
+              <strong>Rodrigo Barbosa</strong>
+              <span>BarberKing — RJ</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="t-stars">⭐⭐⭐⭐⭐</div>
+          <p>"O clube de assinaturas foi uma revolução. Tenho receita recorrente garantida todo mês e meus clientes adoram os benefícios exclusivos."</p>
+          <div class="t-author">
+            <div class="t-avatar">F</div>
+            <div class="t-info">
+              <strong>Fernanda Rocha</strong>
+              <span>Studio Glam — MG</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="t-stars">⭐⭐⭐⭐⭐</div>
+          <p>"Gerencio 3 unidades tranquilamente pelo sistema. Os relatórios consolidados me dão uma visão completa de tudo em tempo real."</p>
+          <div class="t-author">
+            <div class="t-avatar">C</div>
+            <div class="t-info">
+              <strong>Carlos Mendes</strong>
+              <span>Rede Beauty Pro — BA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-controls">
+        <button class="t-btn" id="tPrev" aria-label="Anterior">‹</button>
+        <div class="t-dots" id="tDots"></div>
+        <button class="t-btn" id="tNext" aria-label="Próximo">›</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="cta-section" id="planos">
+    <div class="cta-bg">
+      <div class="cta-orb cta-orb-1"></div>
+      <div class="cta-orb cta-orb-2"></div>
+    </div>
+    <div class="cta-container">
+      <div class="cta-badge">Comece Hoje Mesmo</div>
+      <h2 class="cta-title">Mais de <span class="cta-num">40.000 negócios</span><br/>já transformaram sua gestão</h2>
+      <p class="cta-subtitle">Junte-se aos melhores negócios de beleza do Brasil. Teste grátis por 14 dias, sem cartão de crédito.</p>
+      <div class="cta-actions">
+        <a href="#" class="btn-cta-primary">
+          Começar meu teste grátis
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M8 3l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#" class="btn-cta-secondary">Ver Planos e Preços</a>
+      </div>
+      <div class="cta-trust">
+        <span>✓ Sem cartão de crédito</span>
+        <span>✓ 14 dias grátis</span>
+        <span>✓ Suporte incluso</span>
+        <span>✓ Cancele quando quiser</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="logo-icon">✦</div>
+          <span>Glam</span>
+        </div>
+        <p>O sistema de gestão completo para negócios de beleza e bem-estar do Brasil.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram" class="social-link">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook" class="social-link">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="#" aria-label="YouTube" class="social-link">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="#" aria-label="TikTok" class="social-link">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Institucional</h4>
+          <ul>
+            <li><a href="#">Quem somos</a></li>
+            <li><a href="#">Contato</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Termos de uso</a></li>
+            <li><a href="#">Política de privacidade</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Negócios</h4>
+          <ul>
+            <li><a href="#">Salão de Beleza</a></li>
+            <li><a href="#">Barbearia</a></li>
+            <li><a href="#">Clínica de Estética</a></li>
+            <li><a href="#">Studios</a></li>
+            <li><a href="#">Redes e Franquias</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Recursos</h4>
+          <ul>
+            <li><a href="#">Agenda Online</a></li>
+            <li><a href="#">Controle Financeiro</a></li>
+            <li><a href="#">WhatsApp Automático</a></li>
+            <li><a href="#">Clube de Assinaturas</a></li>
+            <li><a href="#">Emissão de NF</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>App Profissional</h4>
+          <p class="footer-app-desc">Seus profissionais acompanham tudo pelo app.</p>
+          <div class="app-badges">
+            <a href="#" class="app-badge">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+              App Store
+            </a>
+            <a href="#" class="app-badge">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76a1 1 0 0 0 .36.24 1 1 0 0 0 .53.04L14.69 12 3.07 0-.04.28A1 1 0 0 0 0 1v22a1 1 0 0 0 .18.52l3 3.24zM16.44 13.84l3.08-1.78-2.83-1.64L14.7 12l1.74 1.84zM3.93.39l11.18 11.18-2.42 2.43L3.93.39zM3.18.24L14.7 12 4.44 22.28 3.18.24z"/></svg>
+              Google Play
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-inner">
+        <span>© Glam 2026 — Todos os direitos reservados. CNPJ: 00.000.000/0001-00</span>
+        <span>Feito com ✦ no Brasil</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cookie Banner -->
+  <div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-content">
+      <span>🍪 Utilizamos cookies para melhorar sua experiência. <a href="#">Saiba mais</a></span>
+      <button id="cookieAccept" class="cookie-btn">Ok, entendi</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
