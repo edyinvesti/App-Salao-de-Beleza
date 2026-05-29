@@ -20,15 +20,53 @@ hamburger.addEventListener('click', () => {
 });
 
 // ===== Feature Tabs =====
+const tabNav = document.getElementById('tabNav');
 const tabBtns = document.querySelectorAll('.tab-btn');
 const tabPanels = document.querySelectorAll('.tab-panel');
-tabBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    tabBtns.forEach(b => b.classList.remove('active'));
-    tabPanels.forEach(p => p.classList.remove('active'));
-    btn.classList.add('active');
-    document.querySelector(`[data-panel="${btn.dataset.tab}"]`).classList.add('active');
+
+function switchTab(newBtn) {
+  tabBtns.forEach(b => {
+    b.classList.remove('active');
+    b.setAttribute('aria-selected', 'false');
+    b.setAttribute('tabindex', '-1');
   });
+  tabPanels.forEach(p => p.classList.remove('active'));
+
+  newBtn.classList.add('active');
+  newBtn.setAttribute('aria-selected', 'true');
+  newBtn.setAttribute('tabindex', '0');
+  newBtn.focus();
+
+  const panel = document.querySelector(`[data-panel="${newBtn.dataset.tab}"]`);
+  if (panel) panel.classList.add('active');
+}
+
+tabBtns.forEach(btn => {
+  btn.addEventListener('click', () => switchTab(btn));
+});
+
+tabNav.addEventListener('keydown', (e) => {
+  const currentTab = document.activeElement;
+  if (!currentTab.classList.contains('tab-btn')) return;
+
+  const tabsArray = Array.from(tabBtns);
+  const index = tabsArray.indexOf(currentTab);
+  let nextIndex;
+
+  if (e.key === 'ArrowRight') {
+    nextIndex = (index + 1) % tabsArray.length;
+  } else if (e.key === 'ArrowLeft') {
+    nextIndex = (index - 1 + tabsArray.length) % tabsArray.length;
+  } else if (e.key === 'Home') {
+    nextIndex = 0;
+  } else if (e.key === 'End') {
+    nextIndex = tabsArray.length - 1;
+  } else {
+    return;
+  }
+
+  e.preventDefault();
+  switchTab(tabsArray[nextIndex]);
 });
 
 // ===== Testimonial Carousel =====
@@ -49,8 +87,10 @@ function buildDots() {
   dotsContainer.innerHTML = '';
   const total = getSlideCount();
   for (let i = 0; i < total; i++) {
-    const dot = document.createElement('div');
+    const dot = document.createElement('button');
     dot.className = 't-dot' + (i === currentSlide ? ' active' : '');
+    dot.setAttribute('aria-label', `Ir para slide ${i + 1}`);
+    dot.setAttribute('aria-current', i === currentSlide ? 'true' : 'false');
     dot.addEventListener('click', () => goToSlide(i));
     dotsContainer.appendChild(dot);
   }
@@ -63,7 +103,9 @@ function goToSlide(index) {
   track.style.transition = 'transform .4s ease';
   track.style.transform = `translateX(-${currentSlide * slidesPerView * cardWidth}px)`;
   document.querySelectorAll('.t-dot').forEach((d, i) => {
-    d.classList.toggle('active', i === currentSlide);
+    const isActive = i === currentSlide;
+    d.classList.toggle('active', isActive);
+    d.setAttribute('aria-current', isActive ? 'true' : 'false');
   });
 }
 
