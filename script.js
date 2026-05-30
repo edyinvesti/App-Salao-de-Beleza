@@ -20,15 +20,45 @@ hamburger.addEventListener('click', () => {
 });
 
 // ===== Feature Tabs =====
+const tabNav = document.getElementById('tabNav');
 const tabBtns = document.querySelectorAll('.tab-btn');
 const tabPanels = document.querySelectorAll('.tab-panel');
-tabBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    tabBtns.forEach(b => b.classList.remove('active'));
-    tabPanels.forEach(p => p.classList.remove('active'));
-    btn.classList.add('active');
-    document.querySelector(`[data-panel="${btn.dataset.tab}"]`).classList.add('active');
+
+function switchTab(newBtn) {
+  const targetPanelId = newBtn.getAttribute('aria-controls');
+
+  tabBtns.forEach(btn => {
+    const isActive = btn === newBtn;
+    btn.classList.toggle('active', isActive);
+    btn.setAttribute('aria-selected', isActive);
+    btn.setAttribute('tabindex', isActive ? '0' : '-1');
   });
+
+  tabPanels.forEach(panel => {
+    const isActive = panel.id === targetPanelId;
+    panel.classList.toggle('active', isActive);
+    panel.setAttribute('tabindex', isActive ? '0' : '-1');
+  });
+}
+
+tabBtns.forEach(btn => {
+  btn.addEventListener('click', () => switchTab(btn));
+});
+
+tabNav.addEventListener('keydown', (e) => {
+  const tabs = Array.from(tabBtns);
+  let index = tabs.indexOf(document.activeElement);
+
+  if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+    if (e.key === 'ArrowRight') {
+      index = (index + 1) % tabs.length;
+    } else {
+      index = (index - 1 + tabs.length) % tabs.length;
+    }
+    tabs[index].focus();
+    switchTab(tabs[index]);
+    e.preventDefault();
+  }
 });
 
 // ===== Testimonial Carousel =====
