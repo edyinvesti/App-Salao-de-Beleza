@@ -22,14 +22,45 @@ hamburger.addEventListener('click', () => {
 // ===== Feature Tabs =====
 const tabBtns = document.querySelectorAll('.tab-btn');
 const tabPanels = document.querySelectorAll('.tab-panel');
-tabBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    tabBtns.forEach(b => b.classList.remove('active'));
-    tabPanels.forEach(p => p.classList.remove('active'));
-    btn.classList.add('active');
-    document.querySelector(`[data-panel="${btn.dataset.tab}"]`).classList.add('active');
+const tabNav = document.getElementById('tabNav');
+
+function switchTab(btn) {
+  tabBtns.forEach(b => {
+    b.classList.remove('active');
+    b.setAttribute('aria-selected', 'false');
+    b.setAttribute('tabindex', '-1');
   });
+  tabPanels.forEach(p => p.classList.remove('active'));
+
+  btn.classList.add('active');
+  btn.setAttribute('aria-selected', 'true');
+  btn.setAttribute('tabindex', '0');
+
+  const panel = document.querySelector(`[data-panel="${btn.dataset.tab}"]`);
+  if (panel) panel.classList.add('active');
+}
+
+tabBtns.forEach(btn => {
+  btn.addEventListener('click', () => switchTab(btn));
 });
+
+if (tabNav) {
+  tabNav.addEventListener('keydown', (e) => {
+    const tabs = Array.from(tabBtns);
+    let index = tabs.indexOf(document.activeElement);
+
+    if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+      if (e.key === 'ArrowRight') {
+        index = (index + 1) % tabs.length;
+      } else {
+        index = (index - 1 + tabs.length) % tabs.length;
+      }
+      tabs[index].focus();
+      switchTab(tabs[index]);
+      e.preventDefault();
+    }
+  });
+}
 
 // ===== Testimonial Carousel =====
 const track = document.getElementById('testimonialsTrack');
