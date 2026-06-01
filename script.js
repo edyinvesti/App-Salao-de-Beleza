@@ -24,10 +24,33 @@ const tabBtns = document.querySelectorAll('.tab-btn');
 const tabPanels = document.querySelectorAll('.tab-panel');
 tabBtns.forEach(btn => {
   btn.addEventListener('click', () => {
-    tabBtns.forEach(b => b.classList.remove('active'));
+    tabBtns.forEach(b => {
+      b.classList.remove('active');
+      b.setAttribute('aria-selected', 'false');
+      b.setAttribute('tabindex', '-1');
+    });
     tabPanels.forEach(p => p.classList.remove('active'));
     btn.classList.add('active');
+    btn.setAttribute('aria-selected', 'true');
+    btn.setAttribute('tabindex', '0');
     document.querySelector(`[data-panel="${btn.dataset.tab}"]`).classList.add('active');
+  });
+
+  btn.addEventListener('keydown', (e) => {
+    const btns = Array.from(tabBtns);
+    const index = btns.indexOf(btn);
+    let nextIndex;
+
+    if (e.key === 'ArrowRight') {
+      nextIndex = (index + 1) % btns.length;
+    } else if (e.key === 'ArrowLeft') {
+      nextIndex = (index - 1 + btns.length) % btns.length;
+    }
+
+    if (nextIndex !== undefined) {
+      btns[nextIndex].focus();
+      btns[nextIndex].click();
+    }
   });
 });
 
@@ -49,8 +72,10 @@ function buildDots() {
   dotsContainer.innerHTML = '';
   const total = getSlideCount();
   for (let i = 0; i < total; i++) {
-    const dot = document.createElement('div');
+    const dot = document.createElement('button');
     dot.className = 't-dot' + (i === currentSlide ? ' active' : '');
+    dot.setAttribute('aria-label', `Ir para slide ${i + 1}`);
+    dot.setAttribute('aria-current', i === currentSlide ? 'true' : 'false');
     dot.addEventListener('click', () => goToSlide(i));
     dotsContainer.appendChild(dot);
   }
@@ -63,7 +88,9 @@ function goToSlide(index) {
   track.style.transition = 'transform .4s ease';
   track.style.transform = `translateX(-${currentSlide * slidesPerView * cardWidth}px)`;
   document.querySelectorAll('.t-dot').forEach((d, i) => {
-    d.classList.toggle('active', i === currentSlide);
+    const isActive = i === currentSlide;
+    d.classList.toggle('active', isActive);
+    d.setAttribute('aria-current', isActive ? 'true' : 'false');
   });
 }
 
