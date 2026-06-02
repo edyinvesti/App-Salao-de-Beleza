@@ -15,6 +15,7 @@
   --max-w:1200px;
 }
 html{scroll-behavior:smooth;font-size:16px}
+:focus-visible{outline:2px solid var(--primary);outline-offset:4px;box-shadow:0 0 0 4px var(--primary-glow)}
 body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 ul{list-style:none}
@@ -256,8 +257,9 @@ img{max-width:100%;display:block}
 .t-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--card-border);background:var(--bg);color:var(--text);font-size:1.1rem;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center}
 .t-btn:hover{border-color:var(--primary);color:var(--primary)}
 .t-dots{display:flex;gap:6px}
-.t-dot{width:8px;height:8px;border-radius:50%;background:var(--card-border);cursor:pointer;transition:.2s}
+.t-dot{width:8px;height:8px;border-radius:50%;background:var(--card-border);cursor:pointer;transition:.2s;border:none;padding:0;display:block}
 .t-dot.active{background:var(--primary);width:20px;border-radius:4px}
+.t-dot:focus-visible{outline:2px solid var(--primary);outline-offset:4px;box-shadow:0 0 0 4px var(--primary-glow)}
 
 /* ===== CTA ===== */
 .cta-section{padding:100px 0;position:relative;overflow:hidden;background:var(--bg)}
