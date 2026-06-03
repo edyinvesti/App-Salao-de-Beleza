@@ -22,13 +22,51 @@ hamburger.addEventListener('click', () => {
 // ===== Feature Tabs =====
 const tabBtns = document.querySelectorAll('.tab-btn');
 const tabPanels = document.querySelectorAll('.tab-panel');
-tabBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    tabBtns.forEach(b => b.classList.remove('active'));
-    tabPanels.forEach(p => p.classList.remove('active'));
-    btn.classList.add('active');
-    document.querySelector(`[data-panel="${btn.dataset.tab}"]`).classList.add('active');
+const tabNav = document.getElementById('tabNav');
+
+function switchTab(btn) {
+  tabBtns.forEach(b => {
+    b.classList.remove('active');
+    b.setAttribute('aria-selected', 'false');
+    b.setAttribute('tabindex', '-1');
   });
+  tabPanels.forEach(p => p.classList.remove('active'));
+
+  btn.classList.add('active');
+  btn.setAttribute('aria-selected', 'true');
+  btn.setAttribute('tabindex', '0');
+  btn.focus();
+
+  const panel = document.querySelector(`[data-panel="${btn.dataset.tab}"]`);
+  if (panel) panel.classList.add('active');
+}
+
+tabBtns.forEach(btn => {
+  btn.addEventListener('click', () => switchTab(btn));
+});
+
+tabNav.addEventListener('keydown', (e) => {
+  const activeBtn = document.activeElement;
+  if (!activeBtn.classList.contains('tab-btn')) return;
+
+  const btns = Array.from(tabBtns);
+  const index = btns.indexOf(activeBtn);
+
+  let nextIndex;
+  if (e.key === 'ArrowRight') {
+    nextIndex = (index + 1) % btns.length;
+  } else if (e.key === 'ArrowLeft') {
+    nextIndex = (index - 1 + btns.length) % btns.length;
+  } else if (e.key === 'Home') {
+    nextIndex = 0;
+  } else if (e.key === 'End') {
+    nextIndex = btns.length - 1;
+  } else {
+    return;
+  }
+
+  e.preventDefault();
+  switchTab(btns[nextIndex]);
 });
 
 // ===== Testimonial Carousel =====
@@ -49,8 +87,10 @@ function buildDots() {
   dotsContainer.innerHTML = '';
   const total = getSlideCount();
   for (let i = 0; i < total; i++) {
-    const dot = document.createElement('div');
+    const dot = document.createElement('button');
     dot.className = 't-dot' + (i === currentSlide ? ' active' : '');
+    dot.setAttribute('aria-label', `Ir para slide ${i + 1}`);
+    dot.setAttribute('aria-current', i === currentSlide ? 'true' : 'false');
     dot.addEventListener('click', () => goToSlide(i));
     dotsContainer.appendChild(dot);
   }
@@ -63,7 +103,9 @@ function goToSlide(index) {
   track.style.transition = 'transform .4s ease';
   track.style.transform = `translateX(-${currentSlide * slidesPerView * cardWidth}px)`;
   document.querySelectorAll('.t-dot').forEach((d, i) => {
-    d.classList.toggle('active', i === currentSlide);
+    const isActive = i === currentSlide;
+    d.classList.toggle('active', isActive);
+    d.setAttribute('aria-current', isActive ? 'true' : 'false');
   });
 }
 
