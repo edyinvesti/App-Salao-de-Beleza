@@ -1,0 +1,3 @@
+## 2026-03-04 - Carousel Dots Accessibility and Global Focus States
+**Learning:** Refactoring non-semantic elements (like `div`) to semantic elements (like `button`) for interactive controls is crucial for accessibility, but requires explicitly resetting browser default styles (border, padding) to avoid visual regressions. Additionally, `:focus-visible` provides a cleaner UX for mouse users while maintaining accessibility for keyboard users.
+**Action:** Always check for non-semantic interactive elements and replace them with `<button>` (with `type="button"`) and appropriate ARIA attributes. Implement global `:focus-visible` styles early in a project to ensure a consistent and accessible experience.
