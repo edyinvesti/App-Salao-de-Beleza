@@ -1,0 +1,3 @@
+## 2026-06-11 - Carousel Dot Accessibility and Focus Indicators
+**Learning:** Using `div` elements for carousel indicators makes them inaccessible to keyboard and screen reader users. Converting them to `button` elements with appropriate ARIA labels and state indicators (`aria-current`) significantly improves the UX for assistive technologies. Additionally, global `:focus-visible` styles provide essential visual feedback for keyboard navigation without affecting mouse users.
+**Action:** Always use semantic `<button>` elements for interactive indicators and include global `:focus-visible` styles using the design system's primary colors.
