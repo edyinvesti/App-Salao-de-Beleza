@@ -1,0 +1,3 @@
+## 2026-06-15 - [Carousel Accessibility & Focus Indicators]
+**Learning:** Refactoring non-semantic elements (like <div> dots) to interactive <button> elements is essential for keyboard accessibility but requires explicit CSS resets (border: none; padding: 0;) to maintain visual consistency. Using `aria-current="true"` on indicators and `aria-live="polite"` on tracks ensures a predictable experience for screen reader users. Additionally, global `:focus-visible` styles provide critical navigation cues in dark-themed interfaces where default outlines might be invisible.
+**Action:** Always use semantic buttons for carousel controls and include global focus indicators with appropriate color contrast.
