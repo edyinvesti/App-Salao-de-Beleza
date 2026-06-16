@@ -1,0 +1,3 @@
+## 2025-05-14 - Accessible Carousel Indicators
+**Learning:** Refactoring carousel dots from `<div>` to `<button>` is essential for keyboard and screen reader accessibility, but it can introduce visual regressions due to default browser button styling (borders, padding, and flex alignment).
+**Action:** When converting decorative elements to buttons, explicitly reset `border: none`, `padding: 0`, and ensure `display: block` or `display: inline-block` to maintain the original layout within flex/grid containers. Always accompany this with `aria-label` and `aria-current` for a complete a11y implementation.
