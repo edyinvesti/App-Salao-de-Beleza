@@ -1,0 +1,3 @@
+## 2025-05-14 - Semantic Accessibility for Dynamic UI Components
+**Learning:** When refactoring non-semantic `div` elements (like carousel dots) into semantic `button` elements for accessibility, it is crucial to explicitly reset the default browser button styles (border, padding, background, etc.) and set the display mode (e.g., `display: block`) to avoid visual regressions and ensure correct alignment within flex or grid containers.
+**Action:** Always include a CSS reset block for custom interactive elements when converting them to semantic tags, and verify visual integrity across different viewport sizes.
