@@ -1,0 +1,3 @@
+## 2025-05-14 - [Accessible Interactive Components]
+**Learning:** Refactoring non-semantic elements (like <div> dots in carousels) to <button> elements is essential for keyboard accessibility but requires an explicit CSS reset (border: none, padding: 0) to maintain visual consistency. Additionally, implementing full WAI-ARIA patterns for tabs and menus (aria-expanded, aria-controls, aria-selected) significantly improves the experience for assistive technology users without changing the visual design for others.
+**Action:** Always check for interactive <div> or <span> elements and convert them to semantic <button> or <a> tags, accompanied by appropriate ARIA roles and state attributes.
