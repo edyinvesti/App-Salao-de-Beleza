@@ -9,8 +9,10 @@ const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
 hamburger.addEventListener('click', () => {
   navLinks.classList.toggle('open');
+  const isOpen = navLinks.classList.contains('open');
+  hamburger.setAttribute('aria-expanded', isOpen);
   const spans = hamburger.querySelectorAll('span');
-  if (navLinks.classList.contains('open')) {
+  if (isOpen) {
     spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
     spans[1].style.opacity = '0';
     spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
@@ -24,9 +26,13 @@ const tabBtns = document.querySelectorAll('.tab-btn');
 const tabPanels = document.querySelectorAll('.tab-panel');
 tabBtns.forEach(btn => {
   btn.addEventListener('click', () => {
-    tabBtns.forEach(b => b.classList.remove('active'));
+    tabBtns.forEach(b => {
+      b.classList.remove('active');
+      b.setAttribute('aria-selected', 'false');
+    });
     tabPanels.forEach(p => p.classList.remove('active'));
     btn.classList.add('active');
+    btn.setAttribute('aria-selected', 'true');
     document.querySelector(`[data-panel="${btn.dataset.tab}"]`).classList.add('active');
   });
 });
@@ -49,8 +55,11 @@ function buildDots() {
   dotsContainer.innerHTML = '';
   const total = getSlideCount();
   for (let i = 0; i < total; i++) {
-    const dot = document.createElement('div');
+    const dot = document.createElement('button');
     dot.className = 't-dot' + (i === currentSlide ? ' active' : '');
+    dot.setAttribute('aria-label', `Ir para o slide ${i + 1}`);
+    dot.setAttribute('aria-current', i === currentSlide ? 'true' : 'false');
+    dot.setAttribute('type', 'button');
     dot.addEventListener('click', () => goToSlide(i));
     dotsContainer.appendChild(dot);
   }
@@ -64,6 +73,7 @@ function goToSlide(index) {
   track.style.transform = `translateX(-${currentSlide * slidesPerView * cardWidth}px)`;
   document.querySelectorAll('.t-dot').forEach((d, i) => {
     d.classList.toggle('active', i === currentSlide);
+    d.setAttribute('aria-current', i === currentSlide ? 'true' : 'false');
   });
 }
 
@@ -106,6 +116,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       if (navLinks.classList.contains('open')) {
         navLinks.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
         const spans = hamburger.querySelectorAll('span');
         spans[0].style.transform = ''; spans[1].style.opacity = ''; spans[2].style.transform = '';
       }
