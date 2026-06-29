@@ -1,0 +1,3 @@
+## 2026-06-29 - Carousel Dot Refactoring & Focus States
+**Learning:** When refactoring interactive `div` elements to semantic `button` elements (e.g., for carousel indicators), it's crucial to explicitly reset default browser button styles (border, padding, background) to avoid visual regressions and ensure layout consistency within flex/grid containers. Additionally, global `:focus-visible` styles should be implemented early to ensure keyboard accessibility across all interactive components.
+**Action:** Always include a CSS reset for custom button components and prioritize global focus indicators in the initial styling pass.
