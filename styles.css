@@ -256,8 +256,10 @@ img{max-width:100%;display:block}
 .t-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--card-border);background:var(--bg);color:var(--text);font-size:1.1rem;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center}
 .t-btn:hover{border-color:var(--primary);color:var(--primary)}
 .t-dots{display:flex;gap:6px}
-.t-dot{width:8px;height:8px;border-radius:50%;background:var(--card-border);cursor:pointer;transition:.2s}
+.t-dot{width:8px;height:8px;border-radius:50%;background:var(--card-border);cursor:pointer;transition:.2s;border:none;padding:0;display:block}
 .t-dot.active{background:var(--primary);width:20px;border-radius:4px}
+
+:focus-visible{outline:2px solid var(--primary);outline-offset:4px}
 
 /* ===== CTA ===== */
 .cta-section{padding:100px 0;position:relative;overflow:hidden;background:var(--bg)}
