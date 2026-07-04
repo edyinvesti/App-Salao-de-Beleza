@@ -29,7 +29,7 @@
         <a href="#" class="btn-ghost">Entrar</a>
         <a href="#demo" class="btn-primary">Teste Grátis</a>
       </div>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -214,8 +214,8 @@
                   <div class="cal-header">
                     <span class="cal-month">Março 2026</span>
                     <div class="cal-nav">
-                      <button>‹</button>
-                      <button>›</button>
+                      <button aria-label="Mês anterior">‹</button>
+                      <button aria-label="Próximo mês">›</button>
                     </div>
                   </div>
                   <div class="cal-days-header">
@@ -675,7 +675,7 @@
         <div class="section-badge">Depoimentos</div>
         <h2 class="section-title">O que nossos <span class="gradient-text">clientes dizem</span></h2>
       </div>
-      <div class="testimonials-track" id="testimonialsTrack">
+      <div class="testimonials-track" id="testimonialsTrack" aria-live="polite">
         <div class="testimonial-card">
           <div class="t-stars">⭐⭐⭐⭐⭐</div>
           <p>"Desde que comecei a usar o Glam, meu salão cresceu 40% no faturamento. A agenda online mudou tudo — clientes agendando sozinhos enquanto eu durmo!"</p>
