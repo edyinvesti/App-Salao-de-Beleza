@@ -1,0 +1,3 @@
+## 2026-07-05 - Global Focus and Navigation Polish
+**Learning:** For static landing pages with fixed navbars, `scroll-margin-top` on `section` elements is a critical micro-UX win to prevent content overlapping. Additionally, converting interactive `div` elements (like carousel dots) to `button` elements and adding `:focus-visible` styles ensures the site is fully keyboard-accessible without compromising visual design for mouse users.
+**Action:** Always check for fixed header overlaps and non-semantic interactive elements in the initial audit. Use `:focus-visible` for clear focus indicators with CSS variable fallbacks.
