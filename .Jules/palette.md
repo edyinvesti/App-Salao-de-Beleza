@@ -1,0 +1,3 @@
+## 2025-05-14 - [Carousel Accessibility & Global Focus Indicators]
+**Learning:** Refactoring interactive `div` elements into semantic `button` elements is essential for keyboard accessibility, but requires explicit CSS resets (border: none, padding: 0) to avoid visual regressions. Additionally, a global `:focus-visible` style provides a consistent, high-impact accessibility improvement across the entire interface without cluttering the UI for mouse users.
+**Action:** Always use semantic buttons for indicators and include a site-wide focus-visible strategy using CSS variables for consistent branding.
