@@ -1,0 +1,3 @@
+## 2025-05-14 - Accessible Carousel Indicators and Focus States
+**Learning:** Refactoring non-semantic `div` carousel indicators to `button` elements is critical for keyboard accessibility but requires explicit CSS resets (border: none, padding: 0, display: block) to avoid visual regressions in flex-based layouts. Additionally, implementing global `:focus-visible` styles ensures a consistent and accessible experience for keyboard users without affecting mouse interactions.
+**Action:** Always use `<button type="button">` for interactive controls and include a robust CSS reset for them. Implement site-wide focus indicators using `:focus-visible` and `outline-offset` for better visibility.
