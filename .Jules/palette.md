@@ -1,0 +1,3 @@
+## 2025-05-14 - Carousel and Menu Accessibility Patterns
+**Learning:** In static landing pages using custom JavaScript for interactivity (like carousels and hamburger menus), accessibility attributes (ARIA) and semantic elements (buttons) are often overlooked. Specifically, using `div` elements for pagination dots makes them unreachable via keyboard, and missing `aria-expanded` on menus leaves screen reader users without state feedback.
+**Action:** Always refactor interactive `div` elements to `<button type="button">` and ensure all toggleable UI components (menus, accordions, tabs) implement and synchronize the appropriate ARIA state attributes (e.g., `aria-expanded`, `aria-current`).
