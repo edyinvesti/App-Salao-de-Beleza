@@ -337,3 +337,23 @@ img{max-width:100%;display:block}
 /* ===== ANIMATIONS ===== */
 .reveal{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ===== UX ENHANCEMENTS ===== */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+}
+
+section {
+  scroll-margin-top: 100px;
+}
+
+.t-dot {
+  border: none;
+  padding: 0;
+  display: block;
+}
+
+.t-dot:focus-visible {
+  outline-offset: 2px;
+}
