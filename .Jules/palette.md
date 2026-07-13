@@ -1,0 +1,3 @@
+## 2025-05-14 - [Carousel & Navigation Accessibility]
+**Learning:** Refactoring non-semantic clickable elements (like <div> dots) to <button> elements is essential for keyboard accessibility but requires explicit CSS resets (border: none, padding: 0) to avoid visual regressions. Additionally, managing `aria-current` and `aria-expanded` in sync with JavaScript state is crucial for screen reader accuracy.
+**Action:** Always use <button type="button"> for interactive elements that aren't links, and include global :focus-visible styles to assist keyboard-only users without impacting the visual experience for mouse users.
