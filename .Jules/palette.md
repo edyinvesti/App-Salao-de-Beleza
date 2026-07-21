@@ -1,0 +1,3 @@
+## 2026-03-17 - [Accessible Carousel Indicators in Glam Landing Page]
+**Learning:** Standard interactive carousel dots should be implemented as <button type="button"> elements instead of plain <div> elements to ensure screen readers can announce them, and proper 'aria-current="true/false"' and 'aria-label' attributes must be dynamically managed. Additionally, reset-to-button styling is required to avoid CSS layour regressions, and tight ':focus-visible' outline alignment can be accomplished with localized 'outline-offset'.
+**Action:** Always replace passive indicators (divs) with proper button selectors, apply specific localized focus offsets, use type="button" to prevent default form submits, and add corresponding ARIA markers.
