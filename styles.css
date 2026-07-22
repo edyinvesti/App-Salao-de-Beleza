@@ -21,6 +21,8 @@ ul{list-style:none}
 img{max-width:100%;display:block}
 .gradient-text{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 
+:focus-visible{outline:2px solid var(--primary,#a855f7);outline-offset:4px;box-shadow:0 0 0 4px var(--primary-glow,rgba(168,85,247,.25))}
+
 /* ===== NAVBAR ===== */
 .navbar{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:16px 0;transition:all .3s}
 .navbar.scrolled{background:rgba(9,9,11,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--card-border);padding:10px 0}
@@ -100,6 +102,7 @@ img{max-width:100%;display:block}
 .trust-divider{color:var(--text3);opacity:.3}
 
 /* ===== SECTION COMMON ===== */
+section{scroll-margin-top:100px}
 .section-container{max-width:var(--max-w);margin:0 auto;padding:0 24px}
 .section-header{text-align:center;margin-bottom:56px}
 .section-badge{display:inline-block;font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:var(--primary);background:rgba(168,85,247,.1);border:1px solid rgba(168,85,247,.2);padding:6px 16px;border-radius:50px;margin-bottom:16px}
@@ -256,8 +259,9 @@ img{max-width:100%;display:block}
 .t-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--card-border);background:var(--bg);color:var(--text);font-size:1.1rem;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center}
 .t-btn:hover{border-color:var(--primary);color:var(--primary)}
 .t-dots{display:flex;gap:6px}
-.t-dot{width:8px;height:8px;border-radius:50%;background:var(--card-border);cursor:pointer;transition:.2s}
+.t-dot{width:8px;height:8px;border-radius:50%;background:var(--card-border);cursor:pointer;transition:.2s;border:none;padding:0;display:block}
 .t-dot.active{background:var(--primary);width:20px;border-radius:4px}
+.t-dot:focus-visible{outline-offset:2px}
 
 /* ===== CTA ===== */
 .cta-section{padding:100px 0;position:relative;overflow:hidden;background:var(--bg)}
