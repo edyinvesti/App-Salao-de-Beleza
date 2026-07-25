@@ -1,0 +1,5 @@
+# Palette's Micro-UX and Accessibility Journal
+
+## 2026-03-11 - Carousel Accessibility and Roving Focus Refinement
+**Learning:** For interactive sets like carousel indicators (dots), using semantic HTML `<button type="button">` instead of simple list markers or `div` elements ensures they can be reached using standard sequential keyboard navigation. Pairing this with localized Portuguese ARIA labels (`Ir para o slide X`) and managing the `aria-current` state dynamically aligns perfectly with WAI-ARIA carousel conventions while remaining lightweight. When styling, explicit CSS button property resets (e.g., borders, paddings, display settings) are essential to prevent layout regressions when migrating from `div` elements.
+**Action:** When converting non-semantic container elements to `<button>` elements, always explicitly declare `type="button"`, use `setAttribute('aria-label', ...)` for broad cross-browser compatibility, programmatically manage the dynamic `aria-current` states, and apply precise browser style resets alongside focused `:focus-visible` offset stylings.
