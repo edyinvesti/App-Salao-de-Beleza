@@ -1,0 +1,3 @@
+## 2026-08-01 - Global keyboard accessibility & Carousel ARIA patterns
+**Learning:** For carousels on landing pages, converting structural divs representing dots to native <button type="button"> elements with explicitly reset styles avoids structural regressions, ensures they are keyboard focusable, and allows screen readers to navigate using custom aria-label and aria-current states.
+**Action:** Always refactor carousel indicators to <button type="button"> elements, reset styling (border: none; padding: 0; display: block), set pt-BR native labels, manage active state with aria-current, and add global keyboard focus-visible indicator outlines.
