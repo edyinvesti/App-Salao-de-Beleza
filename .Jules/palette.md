@@ -1,0 +1,3 @@
+## 2026-03-31 - [Carousel Accessibility and Focus Indicator Refinement]
+**Learning:** When refactoring div-based carousel indicators into semantic `<button type="button">` elements, they require a reset of browser-default button styles (border: none, padding: 0, display: block) to avoid alignment regressions in flex layouts. Furthermore, tiny circular elements like carousel dots need a reduced `outline-offset` (e.g., 2px) for `:focus-visible` styling to prevent focus rings from overlapping adjacent dots or controls.
+**Action:** Always explicitly reset button layout defaults when converting indicators to buttons, and scale down the focus outline-offset for compact, circular interactive elements.
