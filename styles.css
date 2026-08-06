@@ -256,7 +256,7 @@ img{max-width:100%;display:block}
 .t-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--card-border);background:var(--bg);color:var(--text);font-size:1.1rem;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center}
 .t-btn:hover{border-color:var(--primary);color:var(--primary)}
 .t-dots{display:flex;gap:6px}
-.t-dot{width:8px;height:8px;border-radius:50%;background:var(--card-border);cursor:pointer;transition:.2s}
+.t-dot{width:8px;height:8px;border-radius:50%;background:var(--card-border);cursor:pointer;transition:.2s;border:none;padding:0;display:block}
 .t-dot.active{background:var(--primary);width:20px;border-radius:4px}
 
 /* ===== CTA ===== */
@@ -337,3 +337,13 @@ img{max-width:100%;display:block}
 /* ===== ANIMATIONS ===== */
 .reveal{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ===== FOCUS VISIBLE ===== */
+*:focus-visible {
+  outline: 2px solid var(--primary, #a855f7);
+  outline-offset: 4px;
+  box-shadow: 0 0 0 4px var(--primary-glow, rgba(168,85,247,.25));
+}
+.t-dot:focus-visible {
+  outline-offset: 2px;
+}
