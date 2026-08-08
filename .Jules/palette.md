@@ -1,0 +1,3 @@
+## 2025-08-08 - Accessible Carousel Indicator Dots
+**Learning:** Refactoring placeholder `<div>` elements into semantic `<button type="button">` elements is critical for keyboard and screen reader accessibility, but requires resetting default browser agent button styles (such as `border: none`, `padding: 0`, and `display: block`) to prevent flex/inline layout regressions. Furthermore, tighter visual elements like dots benefit from a reduced `:focus-visible` `outline-offset` to maintain clean visual design during keyboard navigation.
+**Action:** When implementing custom interactive indicators, always use `<button type="button">` styled with strict CSS resets and manage dynamic accessibility states via `aria-current` and unique localized `aria-label`s.
