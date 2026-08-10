@@ -49,8 +49,11 @@ function buildDots() {
   dotsContainer.innerHTML = '';
   const total = getSlideCount();
   for (let i = 0; i < total; i++) {
-    const dot = document.createElement('div');
+    const dot = document.createElement('button');
+    dot.setAttribute('type', 'button');
     dot.className = 't-dot' + (i === currentSlide ? ' active' : '');
+    dot.setAttribute('aria-label', 'Ir para o slide ' + (i + 1));
+    dot.setAttribute('aria-current', (i === currentSlide).toString());
     dot.addEventListener('click', () => goToSlide(i));
     dotsContainer.appendChild(dot);
   }
@@ -60,10 +63,16 @@ function goToSlide(index) {
   const total = getSlideCount();
   currentSlide = Math.max(0, Math.min(index, total - 1));
   const cardWidth = cards[0].offsetWidth + 20;
+  let translation = currentSlide * slidesPerView * cardWidth;
+  const maxTranslation = Math.max(0, (cards.length - slidesPerView) * cardWidth);
+  if (translation > maxTranslation) {
+    translation = maxTranslation;
+  }
   track.style.transition = 'transform .4s ease';
-  track.style.transform = `translateX(-${currentSlide * slidesPerView * cardWidth}px)`;
+  track.style.transform = `translateX(-${translation}px)`;
   document.querySelectorAll('.t-dot').forEach((d, i) => {
     d.classList.toggle('active', i === currentSlide);
+    d.setAttribute('aria-current', (i === currentSlide).toString());
   });
 }
 
