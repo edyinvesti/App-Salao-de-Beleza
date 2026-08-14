@@ -29,7 +29,7 @@
         <a href="#" class="btn-ghost">Entrar</a>
         <a href="#demo" class="btn-primary">Teste Grátis</a>
       </div>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
+      <button type="button" class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -181,14 +181,14 @@
 
       <div class="features-tabs">
         <div class="tab-nav" id="tabNav">
-          <button class="tab-btn active" data-tab="agenda">📅 Agenda</button>
-          <button class="tab-btn" data-tab="site">🌐 Seu Site</button>
-          <button class="tab-btn" data-tab="financeiro">💰 Financeiro</button>
-          <button class="tab-btn" data-tab="pagamentos">💳 Pagamentos</button>
-          <button class="tab-btn" data-tab="whatsapp">💬 WhatsApp</button>
-          <button class="tab-btn" data-tab="assinaturas">🔄 Assinaturas</button>
-          <button class="tab-btn" data-tab="fidelidade">⭐ Fidelidade</button>
-          <button class="tab-btn" data-tab="estoque">📦 Estoque</button>
+          <button type="button" class="tab-btn active" data-tab="agenda">📅 Agenda</button>
+          <button type="button" class="tab-btn" data-tab="site">🌐 Seu Site</button>
+          <button type="button" class="tab-btn" data-tab="financeiro">💰 Financeiro</button>
+          <button type="button" class="tab-btn" data-tab="pagamentos">💳 Pagamentos</button>
+          <button type="button" class="tab-btn" data-tab="whatsapp">💬 WhatsApp</button>
+          <button type="button" class="tab-btn" data-tab="assinaturas">🔄 Assinaturas</button>
+          <button type="button" class="tab-btn" data-tab="fidelidade">⭐ Fidelidade</button>
+          <button type="button" class="tab-btn" data-tab="estoque">📦 Estoque</button>
         </div>
 
         <div class="tab-content-wrapper">
@@ -214,8 +214,8 @@
                   <div class="cal-header">
                     <span class="cal-month">Março 2026</span>
                     <div class="cal-nav">
-                      <button>‹</button>
-                      <button>›</button>
+                      <button type="button" aria-label="Mês anterior">‹</button>
+                      <button type="button" aria-label="Próximo mês">›</button>
                     </div>
                   </div>
                   <div class="cal-days-header">
@@ -722,9 +722,9 @@
         </div>
       </div>
       <div class="testimonial-controls">
-        <button class="t-btn" id="tPrev" aria-label="Anterior">‹</button>
+        <button type="button" class="t-btn" id="tPrev" aria-label="Anterior">‹</button>
         <div class="t-dots" id="tDots"></div>
-        <button class="t-btn" id="tNext" aria-label="Próximo">›</button>
+        <button type="button" class="t-btn" id="tNext" aria-label="Próximo">›</button>
       </div>
     </div>
   </section>
@@ -839,7 +839,7 @@
   <div class="cookie-banner" id="cookieBanner">
     <div class="cookie-content">
       <span>🍪 Utilizamos cookies para melhorar sua experiência. <a href="#">Saiba mais</a></span>
-      <button id="cookieAccept" class="cookie-btn">Ok, entendi</button>
+      <button type="button" id="cookieAccept" class="cookie-btn">Ok, entendi</button>
     </div>
   </div>
 
