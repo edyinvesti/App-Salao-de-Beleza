@@ -15,6 +15,10 @@
   --max-w:1200px;
 }
 html{scroll-behavior:smooth;font-size:16px}
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+}
 body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 ul{list-style:none}
@@ -245,7 +249,7 @@ img{max-width:100%;display:block}
 /* ===== TESTIMONIALS ===== */
 .testimonials-section{padding:100px 0;background:var(--bg2)}
 .testimonials-track{display:flex;gap:20px;overflow:hidden}
-.testimonial-card{min-width:calc(33.333% - 14px);background:var(--bg);border:1px solid var(--card-border);border-radius:var(--radius);padding:28px;flex-shrink:0;transition:transform .3s}
+.testimonial-card{width:calc(33.333% - 14px);background:var(--bg);border:1px solid var(--card-border);border-radius:var(--radius);padding:28px;flex-shrink:0;transition:transform .3s}
 .t-stars{font-size:.8rem;letter-spacing:2px;margin-bottom:12px}
 .testimonial-card p{font-size:.9rem;color:var(--text2);line-height:1.6;margin-bottom:16px;font-style:italic}
 .t-author{display:flex;align-items:center;gap:10px}
@@ -256,7 +260,7 @@ img{max-width:100%;display:block}
 .t-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--card-border);background:var(--bg);color:var(--text);font-size:1.1rem;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center}
 .t-btn:hover{border-color:var(--primary);color:var(--primary)}
 .t-dots{display:flex;gap:6px}
-.t-dot{width:8px;height:8px;border-radius:50%;background:var(--card-border);cursor:pointer;transition:.2s}
+.t-dot{width:8px;height:8px;border-radius:50%;background:var(--card-border);cursor:pointer;transition:.2s;border:none;padding:0;display:block;outline-offset:2px}
 .t-dot.active{background:var(--primary);width:20px;border-radius:4px}
 
 /* ===== CTA ===== */
@@ -328,7 +332,7 @@ img{max-width:100%;display:block}
   .tab-btn{padding:8px 12px;font-size:.75rem}
   .panel-content{padding:24px}
   .business-grid{grid-template-columns:1fr}
-  .testimonial-card{min-width:calc(100% - 0px)}
+  .testimonial-card{width:calc(100% - 0px)}
   .footer-links{grid-template-columns:1fr}
   .footer-bottom-inner{flex-direction:column;gap:8px;text-align:center}
   .cta-trust{flex-direction:column;align-items:center;gap:8px}

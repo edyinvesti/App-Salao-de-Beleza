@@ -1,0 +1,3 @@
+## 2026-08-14 - Testimonial Card Width Layout and Headless Browser Carousel Translations
+**Learning:** Testimonial cards styled with `min-width: calc(33.333% - 14px)` inside a flex container (without an explicit `width` or `flex-basis`) can stretch to their max-content text width on desktop viewports in certain headless browsers. This stretches the cards, causing the carousel dot translation calculations (`currentSlide * slidesPerView * cardWidth`) to translate elements entirely off-screen.
+**Action:** Always define explicit `width: calc(33.333% - 14px)` (instead of `min-width`) on multi-column flex items to guarantee a reliable layout, avoid content-driven stretching, and ensure pixel-perfect slider translations.
