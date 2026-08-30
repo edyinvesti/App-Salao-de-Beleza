@@ -1,0 +1,3 @@
+## 2026-03-30 - Focus Transfer on Anchor Navigation with Custom Smooth Scroll
+**Learning:** When custom JavaScript intercepts internal anchor links (`a[href^="#"]`) using `e.preventDefault()` for smooth scrolling, default browser keyboard focus movement to the target fragment is cancelled. Without calling `target.focus()`, keyboard and screen reader focus remains trapped at the originating link.
+**Action:** Always call `target.focus()` on target containers (ensuring `tabindex="-1"` is present on non-interactive containers like `<main>`) when intercepting anchor clicks in custom scroll scripts.
