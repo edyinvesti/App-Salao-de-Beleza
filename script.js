@@ -104,6 +104,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     if (target) {
       e.preventDefault();
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      target.focus();
       if (navLinks.classList.contains('open')) {
         navLinks.classList.remove('open');
         const spans = hamburger.querySelectorAll('span');
