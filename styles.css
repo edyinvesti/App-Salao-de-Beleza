@@ -334,6 +334,13 @@ img{max-width:100%;display:block}
   .cta-trust{flex-direction:column;align-items:center;gap:8px}
 }
 
+/* ===== FOCUS VISIBLE STYLES ===== */
+:focus-visible{
+  outline:2px solid var(--primary);
+  outline-offset:2px;
+  box-shadow:0 0 0 4px var(--primary-glow);
+}
+
 /* ===== ANIMATIONS ===== */
 .reveal{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}

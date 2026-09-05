@@ -22,14 +22,50 @@ hamburger.addEventListener('click', () => {
 // ===== Feature Tabs =====
 const tabBtns = document.querySelectorAll('.tab-btn');
 const tabPanels = document.querySelectorAll('.tab-panel');
-tabBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    tabBtns.forEach(b => b.classList.remove('active'));
-    tabPanels.forEach(p => p.classList.remove('active'));
-    btn.classList.add('active');
-    document.querySelector(`[data-panel="${btn.dataset.tab}"]`).classList.add('active');
+
+function activateTab(btn) {
+  tabBtns.forEach(b => {
+    b.classList.remove('active');
+    b.setAttribute('aria-selected', 'false');
+    b.setAttribute('tabindex', '-1');
   });
+  tabPanels.forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  btn.setAttribute('aria-selected', 'true');
+  btn.setAttribute('tabindex', '0');
+  const panel = document.querySelector(`[data-panel="${btn.dataset.tab}"]`);
+  if (panel) panel.classList.add('active');
+}
+
+tabBtns.forEach(btn => {
+  btn.addEventListener('click', () => activateTab(btn));
 });
+
+const tabNav = document.getElementById('tabNav');
+if (tabNav) {
+  tabNav.addEventListener('keydown', (e) => {
+    const btns = Array.from(tabBtns);
+    const currentIndex = btns.indexOf(document.activeElement);
+    if (currentIndex === -1) return;
+
+    let targetIndex = null;
+    if (e.key === 'ArrowRight') {
+      targetIndex = (currentIndex + 1) % btns.length;
+    } else if (e.key === 'ArrowLeft') {
+      targetIndex = (currentIndex - 1 + btns.length) % btns.length;
+    } else if (e.key === 'Home') {
+      targetIndex = 0;
+    } else if (e.key === 'End') {
+      targetIndex = btns.length - 1;
+    }
+
+    if (targetIndex !== null) {
+      e.preventDefault();
+      activateTab(btns[targetIndex]);
+      btns[targetIndex].focus();
+    }
+  });
+}
 
 // ===== Testimonial Carousel =====
 const track = document.getElementById('testimonialsTrack');
