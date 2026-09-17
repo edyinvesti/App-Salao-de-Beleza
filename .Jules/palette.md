@@ -1,0 +1,3 @@
+## 2026-03-30 - Accessible Carousel Pagination Dots Refactoring
+**Learning:** Refactoring non-semantic `<div>` elements into semantic `<button type="button">` carousel indicators requires resetting default button styles (`border: none; padding: 0; display: block;`) in CSS to maintain proper flexbox alignment and avoid visual shifts. Additionally, using `aria-current="true"` instead of `aria-selected` is the standard pattern for carousel slide position indicators.
+**Action:** When converting carousel dots to semantic `<button>` elements, apply explicit button style resets in CSS and manage `aria-current` dynamically.
