@@ -1,0 +1,3 @@
+## 2026-03-19 - Carousel Dot Button Reset & Accessibility
+**Learning:** Refactoring carousel indicator dots from `<div>` elements to `<button>` elements improves screen reader accessible roles and keyboard focusability, but standard browser default styles on `<button>` elements (border, padding, line-height) can break dot alignment and layout unless explicitly reset in CSS.
+**Action:** When converting non-semantic indicator elements to native `<button>` tags, always explicitly declare `border: none; padding: 0; display: block;` on `.t-dot` CSS rules, and add `:focus-visible` styles with fallback variables.
