@@ -1,0 +1,3 @@
+## 2026-03-31 - Accessible Carousel Indicators & Focus Outlines
+**Learning:** Carousel pagination dots created as `<div>` elements are completely inaccessible to screen reader users and keyboard navigation. Using `<button type="button">` elements with `aria-label` and `aria-current` provides clear accessibility semantics. Furthermore, adding explicit `:focus-visible` outline styles ensures keyboard focus states are clearly visible across all interactive elements.
+**Action:** Always render interactive indicators as `<button type="button">` with `aria-label` and `aria-current`, and apply global `:focus-visible` CSS rules using primary theme variables.
