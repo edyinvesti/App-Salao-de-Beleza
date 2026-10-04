@@ -7,15 +7,31 @@ window.addEventListener('scroll', () => {
 // ===== Hamburger Toggle =====
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
+
+function setNavOpen(isOpen) {
+  navLinks.classList.toggle('open', isOpen);
+  hamburger.setAttribute('aria-expanded', isOpen.toString());
   const spans = hamburger.querySelectorAll('span');
-  if (navLinks.classList.contains('open')) {
+  if (isOpen) {
     spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
     spans[1].style.opacity = '0';
     spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
   } else {
-    spans[0].style.transform = ''; spans[1].style.opacity = ''; spans[2].style.transform = '';
+    spans[0].style.transform = '';
+    spans[1].style.opacity = '';
+    spans[2].style.transform = '';
+  }
+}
+
+hamburger.addEventListener('click', () => {
+  const isOpen = !navLinks.classList.contains('open');
+  setNavOpen(isOpen);
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+    setNavOpen(false);
+    hamburger.focus();
   }
 });
 
@@ -105,9 +121,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
       e.preventDefault();
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       if (navLinks.classList.contains('open')) {
-        navLinks.classList.remove('open');
-        const spans = hamburger.querySelectorAll('span');
-        spans[0].style.transform = ''; spans[1].style.opacity = ''; spans[2].style.transform = '';
+        setNavOpen(false);
       }
     }
   });
