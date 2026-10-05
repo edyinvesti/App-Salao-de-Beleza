@@ -1,0 +1,3 @@
+## 2026-10-05 - Global Focus Rings and ARIA Roles for Static Tabs
+**Learning:** Adding `:focus-visible` styles with glowing primary brand outline offsets provides immediate keyboard focus visibility without affecting mouse click UI aesthetics. Proper WAI-ARIA attributes (`role="tablist"`, `role="tab"`, `role="tabpanel"`, `aria-selected`, `aria-controls`, `aria-expanded`) ensure interactive navigation structures are accessible to screen readers.
+**Action:** Always include global `:focus-visible` styling and ensure interactive JS toggle controls dynamically manage their ARIA attributes (`aria-selected`, `aria-expanded`).
