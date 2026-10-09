@@ -20,16 +20,57 @@ hamburger.addEventListener('click', () => {
 });
 
 // ===== Feature Tabs =====
+const tabNav = document.getElementById('tabNav');
 const tabBtns = document.querySelectorAll('.tab-btn');
 const tabPanels = document.querySelectorAll('.tab-panel');
-tabBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    tabBtns.forEach(b => b.classList.remove('active'));
-    tabPanels.forEach(p => p.classList.remove('active'));
-    btn.classList.add('active');
-    document.querySelector(`[data-panel="${btn.dataset.tab}"]`).classList.add('active');
+
+function switchTab(btn) {
+  tabBtns.forEach(b => {
+    b.classList.remove('active');
+    b.setAttribute('aria-selected', 'false');
+    b.setAttribute('tabindex', '-1');
   });
+  tabPanels.forEach(p => p.classList.remove('active'));
+
+  btn.classList.add('active');
+  btn.setAttribute('aria-selected', 'true');
+  btn.setAttribute('tabindex', '0');
+
+  const targetPanel = document.querySelector(`[data-panel="${btn.dataset.tab}"]`);
+  if (targetPanel) {
+    targetPanel.classList.add('active');
+  }
+}
+
+tabBtns.forEach(btn => {
+  btn.addEventListener('click', () => switchTab(btn));
 });
+
+if (tabNav) {
+  tabNav.addEventListener('keydown', (e) => {
+    const btnArray = Array.from(tabBtns);
+    const currentIndex = btnArray.indexOf(document.activeElement);
+    if (currentIndex === -1) return;
+
+    let newIndex = currentIndex;
+    if (e.key === 'ArrowRight') {
+      newIndex = (currentIndex + 1) % btnArray.length;
+    } else if (e.key === 'ArrowLeft') {
+      newIndex = (currentIndex - 1 + btnArray.length) % btnArray.length;
+    } else if (e.key === 'Home') {
+      newIndex = 0;
+    } else if (e.key === 'End') {
+      newIndex = btnArray.length - 1;
+    } else {
+      return;
+    }
+
+    e.preventDefault();
+    const targetBtn = btnArray[newIndex];
+    switchTab(targetBtn);
+    targetBtn.focus();
+  });
+}
 
 // ===== Testimonial Carousel =====
 const track = document.getElementById('testimonialsTrack');
