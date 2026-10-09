@@ -180,20 +180,20 @@
       </div>
 
       <div class="features-tabs">
-        <div class="tab-nav" id="tabNav">
-          <button class="tab-btn active" data-tab="agenda">📅 Agenda</button>
-          <button class="tab-btn" data-tab="site">🌐 Seu Site</button>
-          <button class="tab-btn" data-tab="financeiro">💰 Financeiro</button>
-          <button class="tab-btn" data-tab="pagamentos">💳 Pagamentos</button>
-          <button class="tab-btn" data-tab="whatsapp">💬 WhatsApp</button>
-          <button class="tab-btn" data-tab="assinaturas">🔄 Assinaturas</button>
-          <button class="tab-btn" data-tab="fidelidade">⭐ Fidelidade</button>
-          <button class="tab-btn" data-tab="estoque">📦 Estoque</button>
+        <div class="tab-nav" id="tabNav" role="tablist" aria-label="Recursos do sistema">
+          <button class="tab-btn active" id="tab-agenda" role="tab" aria-selected="true" aria-controls="panel-agenda" tabindex="0" data-tab="agenda">📅 Agenda</button>
+          <button class="tab-btn" id="tab-site" role="tab" aria-selected="false" aria-controls="panel-site" tabindex="-1" data-tab="site">🌐 Seu Site</button>
+          <button class="tab-btn" id="tab-financeiro" role="tab" aria-selected="false" aria-controls="panel-financeiro" tabindex="-1" data-tab="financeiro">💰 Financeiro</button>
+          <button class="tab-btn" id="tab-pagamentos" role="tab" aria-selected="false" aria-controls="panel-pagamentos" tabindex="-1" data-tab="pagamentos">💳 Pagamentos</button>
+          <button class="tab-btn" id="tab-whatsapp" role="tab" aria-selected="false" aria-controls="panel-whatsapp" tabindex="-1" data-tab="whatsapp">💬 WhatsApp</button>
+          <button class="tab-btn" id="tab-assinaturas" role="tab" aria-selected="false" aria-controls="panel-assinaturas" tabindex="-1" data-tab="assinaturas">🔄 Assinaturas</button>
+          <button class="tab-btn" id="tab-fidelidade" role="tab" aria-selected="false" aria-controls="panel-fidelidade" tabindex="-1" data-tab="fidelidade">⭐ Fidelidade</button>
+          <button class="tab-btn" id="tab-estoque" role="tab" aria-selected="false" aria-controls="panel-estoque" tabindex="-1" data-tab="estoque">📦 Estoque</button>
         </div>
 
         <div class="tab-content-wrapper">
           <!-- AGENDA -->
-          <div class="tab-panel active" data-panel="agenda">
+          <div class="tab-panel active" id="panel-agenda" role="tabpanel" tabindex="0" aria-labelledby="tab-agenda" data-panel="agenda">
             <div class="panel-content">
               <div class="panel-text">
                 <div class="panel-icon-large">📅</div>
@@ -245,7 +245,7 @@
           </div>
 
           <!-- SITE -->
-          <div class="tab-panel" data-panel="site">
+          <div class="tab-panel" id="panel-site" role="tabpanel" tabindex="0" aria-labelledby="tab-site" data-panel="site">
             <div class="panel-content">
               <div class="panel-text">
                 <div class="panel-icon-large">🌐</div>
@@ -289,7 +289,7 @@
           </div>
 
           <!-- FINANCEIRO -->
-          <div class="tab-panel" data-panel="financeiro">
+          <div class="tab-panel" id="panel-financeiro" role="tabpanel" tabindex="0" aria-labelledby="tab-financeiro" data-panel="financeiro">
             <div class="panel-content">
               <div class="panel-text">
                 <div class="panel-icon-large">💰</div>
@@ -339,7 +339,7 @@
           </div>
 
           <!-- PAGAMENTOS -->
-          <div class="tab-panel" data-panel="pagamentos">
+          <div class="tab-panel" id="panel-pagamentos" role="tabpanel" tabindex="0" aria-labelledby="tab-pagamentos" data-panel="pagamentos">
             <div class="panel-content">
               <div class="panel-text">
                 <div class="panel-icon-large">💳</div>
@@ -390,7 +390,7 @@
           </div>
 
           <!-- WHATSAPP -->
-          <div class="tab-panel" data-panel="whatsapp">
+          <div class="tab-panel" id="panel-whatsapp" role="tabpanel" tabindex="0" aria-labelledby="tab-whatsapp" data-panel="whatsapp">
             <div class="panel-content">
               <div class="panel-text">
                 <div class="panel-icon-large">💬</div>
@@ -430,7 +430,7 @@
           </div>
 
           <!-- ASSINATURAS -->
-          <div class="tab-panel" data-panel="assinaturas">
+          <div class="tab-panel" id="panel-assinaturas" role="tabpanel" tabindex="0" aria-labelledby="tab-assinaturas" data-panel="assinaturas">
             <div class="panel-content">
               <div class="panel-text">
                 <div class="panel-icon-large">🔄</div>
@@ -469,7 +469,7 @@
           </div>
 
           <!-- FIDELIDADE -->
-          <div class="tab-panel" data-panel="fidelidade">
+          <div class="tab-panel" id="panel-fidelidade" role="tabpanel" tabindex="0" aria-labelledby="tab-fidelidade" data-panel="fidelidade">
             <div class="panel-content">
               <div class="panel-text">
                 <div class="panel-icon-large">⭐</div>
@@ -515,7 +515,7 @@
           </div>
 
           <!-- ESTOQUE -->
-          <div class="tab-panel" data-panel="estoque">
+          <div class="tab-panel" id="panel-estoque" role="tabpanel" tabindex="0" aria-labelledby="tab-estoque" data-panel="estoque">
             <div class="panel-content">
               <div class="panel-text">
                 <div class="panel-icon-large">📦</div>
