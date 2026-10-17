@@ -1,0 +1,3 @@
+## 2026-10-17 - Accessible Carousel Dots Refactoring
+**Learning:** Carousel pagination dots dynamically generated as `<div>` elements are inaccessible to screen readers and keyboard navigation. Using `<button type="button">` with Portuguese `aria-label` attributes and dynamic `aria-current="true"` provides full screen reader support and keyboard reachability while requiring CSS button style resets (`border: none; padding: 0; display: block;`).
+**Action:** When dynamically generating pagination indicators or sliders, always use semantic `<button type="button">` elements with explicit ARIA labels and `aria-current` state management, ensuring CSS resets preserve visual layout.
