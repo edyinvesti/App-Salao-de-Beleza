@@ -22,12 +22,43 @@ hamburger.addEventListener('click', () => {
 // ===== Feature Tabs =====
 const tabBtns = document.querySelectorAll('.tab-btn');
 const tabPanels = document.querySelectorAll('.tab-panel');
-tabBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    tabBtns.forEach(b => b.classList.remove('active'));
-    tabPanels.forEach(p => p.classList.remove('active'));
-    btn.classList.add('active');
-    document.querySelector(`[data-panel="${btn.dataset.tab}"]`).classList.add('active');
+
+function selectTab(btn) {
+  tabBtns.forEach(b => {
+    b.classList.remove('active');
+    b.setAttribute('aria-selected', 'false');
+    b.setAttribute('tabindex', '-1');
+  });
+  tabPanels.forEach(p => p.classList.remove('active'));
+
+  btn.classList.add('active');
+  btn.setAttribute('aria-selected', 'true');
+  btn.setAttribute('tabindex', '0');
+
+  const panel = document.querySelector(`[data-panel="${btn.dataset.tab}"]`);
+  if (panel) panel.classList.add('active');
+}
+
+tabBtns.forEach((btn, index) => {
+  btn.addEventListener('click', () => selectTab(btn));
+
+  btn.addEventListener('keydown', (e) => {
+    let targetIndex = null;
+    if (e.key === 'ArrowRight') {
+      targetIndex = (index + 1) % tabBtns.length;
+    } else if (e.key === 'ArrowLeft') {
+      targetIndex = (index - 1 + tabBtns.length) % tabBtns.length;
+    } else if (e.key === 'Home') {
+      targetIndex = 0;
+    } else if (e.key === 'End') {
+      targetIndex = tabBtns.length - 1;
+    }
+
+    if (targetIndex !== null) {
+      e.preventDefault();
+      tabBtns[targetIndex].focus();
+      selectTab(tabBtns[targetIndex]);
+    }
   });
 });
 
