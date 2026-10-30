@@ -29,7 +29,7 @@
         <a href="#" class="btn-ghost">Entrar</a>
         <a href="#demo" class="btn-primary">Teste Grátis</a>
       </div>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -180,15 +180,15 @@
       </div>
 
       <div class="features-tabs">
-        <div class="tab-nav" id="tabNav">
-          <button class="tab-btn active" data-tab="agenda">📅 Agenda</button>
-          <button class="tab-btn" data-tab="site">🌐 Seu Site</button>
-          <button class="tab-btn" data-tab="financeiro">💰 Financeiro</button>
-          <button class="tab-btn" data-tab="pagamentos">💳 Pagamentos</button>
-          <button class="tab-btn" data-tab="whatsapp">💬 WhatsApp</button>
-          <button class="tab-btn" data-tab="assinaturas">🔄 Assinaturas</button>
-          <button class="tab-btn" data-tab="fidelidade">⭐ Fidelidade</button>
-          <button class="tab-btn" data-tab="estoque">📦 Estoque</button>
+        <div class="tab-nav" id="tabNav" role="tablist">
+          <button class="tab-btn active" data-tab="agenda" role="tab" aria-selected="true" type="button">📅 Agenda</button>
+          <button class="tab-btn" data-tab="site" role="tab" aria-selected="false" type="button">🌐 Seu Site</button>
+          <button class="tab-btn" data-tab="financeiro" role="tab" aria-selected="false" type="button">💰 Financeiro</button>
+          <button class="tab-btn" data-tab="pagamentos" role="tab" aria-selected="false" type="button">💳 Pagamentos</button>
+          <button class="tab-btn" data-tab="whatsapp" role="tab" aria-selected="false" type="button">💬 WhatsApp</button>
+          <button class="tab-btn" data-tab="assinaturas" role="tab" aria-selected="false" type="button">🔄 Assinaturas</button>
+          <button class="tab-btn" data-tab="fidelidade" role="tab" aria-selected="false" type="button">⭐ Fidelidade</button>
+          <button class="tab-btn" data-tab="estoque" role="tab" aria-selected="false" type="button">📦 Estoque</button>
         </div>
 
         <div class="tab-content-wrapper">
