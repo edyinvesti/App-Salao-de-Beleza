@@ -1,0 +1,3 @@
+## 2026-03-31 - Testimonial Carousel Dots Accessibility Refactor
+**Learning:** Dynamic indicator dots generated as `<div>` elements prevent screen readers and keyboard users from identifying and interacting with slider controls. Refactoring them to `<button type="button">` with localized `aria-label` ("Ir para o slide X") and updating `aria-current="true"` on state changes provides a fully accessible experience. Additionally, explicitly resetting button styles (`border: none; padding: 0; display: block`) avoids visual regressions in flex containers.
+**Action:** Always render carousel dynamic indicators as `<button type="button">` elements with explicit ARIA labels and `aria-current` state management, backed by default button style resets in CSS.
