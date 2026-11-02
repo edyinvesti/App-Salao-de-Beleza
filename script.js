@@ -49,8 +49,11 @@ function buildDots() {
   dotsContainer.innerHTML = '';
   const total = getSlideCount();
   for (let i = 0; i < total; i++) {
-    const dot = document.createElement('div');
+    const dot = document.createElement('button');
+    dot.type = 'button';
     dot.className = 't-dot' + (i === currentSlide ? ' active' : '');
+    dot.setAttribute('aria-label', `Ir para slide ${i + 1}`);
+    if (i === currentSlide) dot.setAttribute('aria-current', 'true');
     dot.addEventListener('click', () => goToSlide(i));
     dotsContainer.appendChild(dot);
   }
@@ -63,7 +66,13 @@ function goToSlide(index) {
   track.style.transition = 'transform .4s ease';
   track.style.transform = `translateX(-${currentSlide * slidesPerView * cardWidth}px)`;
   document.querySelectorAll('.t-dot').forEach((d, i) => {
-    d.classList.toggle('active', i === currentSlide);
+    const isActive = i === currentSlide;
+    d.classList.toggle('active', isActive);
+    if (isActive) {
+      d.setAttribute('aria-current', 'true');
+    } else {
+      d.removeAttribute('aria-current');
+    }
   });
 }
 
