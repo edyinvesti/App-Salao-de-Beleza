@@ -1,0 +1,3 @@
+## 2026-03-30 - Accessible Mobile Navigation and Keyboard Focus Indicators
+**Learning:** Mobile toggle menus require explicit ARIA synchronization (`aria-expanded`, `aria-controls`) and keyboard dismissal (`Escape` key returning focus to the trigger button) to meet WCAG standards; additionally, interactive elements require `:focus-visible` styling with custom property fallbacks to avoid invisible tab sequences.
+**Action:** When adding or updating mobile overlays/navigation menus, encapsulate open/close state transitions inside a single helper function that synchronizes both visual classes and ARIA string attributes, and register an `Escape` key event listener.
