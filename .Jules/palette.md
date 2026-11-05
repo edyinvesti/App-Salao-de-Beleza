@@ -1,0 +1,3 @@
+## 2026-11-05 - Global Focus Indicators and Accessible Skip Navigation
+**Learning:** In dark mode interfaces with fixed navigation headers, keyboard navigation lacks orientation unless high-contrast `:focus-visible` outlines using brand tokens (`--primary` and `--primary-glow`) and `scroll-margin-top` are defined. Providing a visually hidden skip link that translates into view on focus prevents tedious navigation repetitions for keyboard and screen reader users.
+**Action:** Pair skip links with `:focus-visible` ring styles and `scroll-margin-top: calc(var(--nav-h) + 16px)` on main target sections whenever implementing accessible navigation in dark-themed landing pages.

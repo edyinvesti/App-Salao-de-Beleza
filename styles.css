@@ -16,10 +16,16 @@
 }
 html{scroll-behavior:smooth;font-size:16px}
 body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+section{scroll-margin-top:calc(var(--nav-h) + 16px)}
 a{color:inherit;text-decoration:none}
 ul{list-style:none}
 img{max-width:100%;display:block}
 .gradient-text{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* Focus styles & Skip link for accessibility */
+:focus-visible{outline:2px solid var(--primary);outline-offset:2px;box-shadow:0 0 0 4px var(--primary-glow)}
+.skip-link{position:absolute;top:16px;left:16px;z-index:9999;padding:12px 20px;background:var(--bg2);color:var(--text);border:2px solid var(--primary);border-radius:var(--radius-sm);font-weight:600;font-size:.9rem;transform:translateY(-200%);transition:transform .2s ease;box-shadow:var(--shadow)}
+.skip-link:focus,.skip-link:focus-visible{transform:translateY(0)}
 
 /* ===== NAVBAR ===== */
 .navbar{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:16px 0;transition:all .3s}
