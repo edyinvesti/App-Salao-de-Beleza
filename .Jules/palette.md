@@ -1,0 +1,3 @@
+## 2026-11-07 - Accessible Carousel Dots and Button Styling Resets
+**Learning:** When refactoring `<div>` elements to `<button>` elements for carousel indicators, native browser user agent styles (such as borders, paddings, and background colors) can disrupt flex layout and indicator sizing if not explicitly reset (`border: none; padding: 0; display: block;`). Additionally, dynamically pairing `aria-current="true"` on the active button with a descriptive, localized `aria-label` provides essential orientation context to screen reader and keyboard users.
+**Action:** When converting indicator elements to `<button>`, ensure CSS resets are explicitly defined on the class selector and maintain synchronized `aria-current` states alongside active styling classes.
