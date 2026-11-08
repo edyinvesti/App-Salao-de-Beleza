@@ -1,0 +1,3 @@
+## 2026-11-08 - Feature Tabs Keyboard Navigation & ARIA Semantics
+**Learning:** Purely visual tabs built with `<button class="tab-btn">` without `role="tablist"` / `role="tab"` / `role="tabpanel"` leave screen readers unaware of the relationship between controls and contents. In addition, without roving `tabindex` and arrow key navigation (`ArrowRight`, `ArrowLeft`, `Home`, `End`), keyboard users must awkwardly tab through all 8 tab triggers before reaching the content panel.
+**Action:** Always provide full WAI-ARIA tab semantics (`role="tablist"`, `role="tab"`, `role="tabpanel"`, `aria-selected`, `aria-controls`, `aria-labelledby`), manage roving `tabindex` (`0` for selected, `-1` for inactive), and support arrow key cycling with `:focus-visible` styling.
