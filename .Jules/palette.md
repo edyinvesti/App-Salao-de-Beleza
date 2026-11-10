@@ -1,0 +1,3 @@
+## 2026-03-31 - Mobile Navigation Accessibility and Keyboard Trapping
+**Learning:** In static single-page websites with responsive overlays, hamburger toggles often lack `aria-expanded` and `aria-controls` attributes, and closing the menu via anchor clicks or keyboard `Escape` can leave focus trapped or lost, disorienting screen reader and keyboard-only users.
+**Action:** Centralize mobile menu open/close state transitions through a single controller helper function that updates classes and synchronizes boolean ARIA attributes (`aria-expanded`) as explicit strings, handles `Escape` key dismissal, and returns focus to the toggle trigger button.

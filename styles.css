@@ -1,5 +1,6 @@
 /* ===== RESET & BASE ===== */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:focus-visible{outline:2px solid var(--primary, #a855f7);outline-offset:2px}
 :root{
   --bg:#09090b;--bg2:#111113;--bg3:#18181b;--bg4:#27272a;
   --text:#fafafa;--text2:#a1a1aa;--text3:#71717a;
